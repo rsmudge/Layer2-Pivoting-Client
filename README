@@ -10,6 +10,10 @@ http://backreference.org/2010/03/26/tuntap-interface-tutorial/
 The simpletun.c server may crash, occasionally, if you leave BUFSIZE at line
 42 set to the default. Consider setting it to a higher value (e.g., 8192).
 
+The tutorial that accompanies this code is at:
+
+http://blog.cobaltstrike.com/2014/10/14/how-vpn-pivoting-works-with-source-code/
+
 Build
 ~~~~~
 Before you can build the VPN pivoting client, you must download the WinPCAP
