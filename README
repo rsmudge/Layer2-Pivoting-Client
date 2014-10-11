@@ -1,0 +1,53 @@
+.---------------------.
+| VPN Pivoting Client  >-------------------------------------------------------
+`---------------------'
+
+This code is a simple client to demonstrate VPN pivoting with the Windows PCAP
+library. It's designed to connect to the simpletun.c server by Davide Brini.
+
+http://backreference.org/2010/03/26/tuntap-interface-tutorial/
+
+The simpletun.c server may crash, occasionally, if you leave BUFSIZE at line
+42 set to the default. Consider setting it to a higher value (e.g., 8192).
+
+Build
+~~~~~
+Before you can build the VPN pivoting client, you must download the WinPCAP
+Developer's Kit. This doesn't change too often. Just download the ZIP file
+and unzip into this folder [such that there's a ./WpdPack folder in the same
+folder as this README].
+
+http://www.winpcap.org/devel.htm
+
+The Makefile is setup to build the VPN client on Kali Linux [I know, right?].
+To build it, type 'make'.
+
+Use
+~~~
+
+1. Start a VPN server with simpletun:
+
+	./simpletun -i [interface] -s -p [port] -a
+
+2. Install WinPcap on client system
+
+	http://www.winpcap.org/install/default.htm
+
+3. Start the VPN client
+
+	client.exe [server] [port] [localip]
+
+4. On the VPN server system, configure an IP address:
+
+	ifconfig [interface] [target net IP] [mask]
+
+   or request an IP address with a DHCP client:
+
+	dhclient [interface]
+
+Author?
+~~~~~~~
+(c) 2014 Raphael Mudge, Strategic Cyber LLC
+http://www.advancedpentest.com/
+
+See LICENSE for license information.

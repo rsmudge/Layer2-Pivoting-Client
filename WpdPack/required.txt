@@ -1,0 +1,6 @@
+To build this VPN client, you will need the WinPcap Developer's Pack.
+
+http://www.winpcap.org/devel.htm
+
+Download it and make sure its contents extract to this folder.
+
