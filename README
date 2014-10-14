@@ -2,7 +2,7 @@
 | VPN Pivoting Client  >-------------------------------------------------------
 `---------------------'
 
-This code is a simple client to demonstrate VPN pivoting with the Windows PCAP
+This code is a simple client to demonstrate VPN pivoting* with the Windows PCAP
 library. It's designed to connect to the simpletun.c server by Davide Brini.
 
 http://backreference.org/2010/03/26/tuntap-interface-tutorial/
@@ -13,6 +13,10 @@ The simpletun.c server may crash, occasionally, if you leave BUFSIZE at line
 The tutorial that accompanies this code is at:
 
 http://blog.cobaltstrike.com/2014/10/14/how-vpn-pivoting-works-with-source-code/
+
+* This code is not a "VPN client" as it does not encrypt its traffic. This 
+  code is an example to show how VPN pivoting works in commercial penetration
+  testing tools.
 
 Build
 ~~~~~
