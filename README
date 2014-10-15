@@ -1,9 +1,9 @@
-.---------------------.
-| VPN Pivoting Client  >-------------------------------------------------------
-`---------------------'
+.------------------------.
+| Layer-2 Pivoting Client >-------------------------------------------------------
+`------------------------'
 
-This code is a simple client to demonstrate VPN pivoting* with the Windows PCAP
-library. It's designed to connect to the simpletun.c server by Davide Brini.
+This code is a simple client to demonstrate Layer-2 pivoting* with the Windows 
+PCAP library. It's designed to connect to the simpletun.c server by Davide Brini.
 
 http://backreference.org/2010/03/26/tuntap-interface-tutorial/
 
@@ -14,26 +14,22 @@ The tutorial that accompanies this code is at:
 
 http://blog.cobaltstrike.com/2014/10/14/how-vpn-pivoting-works-with-source-code/
 
-* This code is not a "VPN client" as it does not encrypt its traffic. This 
-  code is an example to show how VPN pivoting works in commercial penetration
-  testing tools.
-
 Build
 ~~~~~
-Before you can build the VPN pivoting client, you must download the WinPCAP
+Before you can build the layer-2 pivoting client, you must download the WinPCAP
 Developer's Kit. This doesn't change too often. Just download the ZIP file
 and unzip into this folder [such that there's a ./WpdPack folder in the same
 folder as this README].
 
 http://www.winpcap.org/devel.htm
 
-The Makefile is setup to build the VPN client on Kali Linux [I know, right?].
+The Makefile is setup to build the Layer-2 client on Kali Linux [I know, right?].
 To build it, type 'make'.
 
 Use
 ~~~
 
-1. Start a VPN server with simpletun:
+1. Start a server with simpletun:
 
 	./simpletun -i [interface] -s -p [port] -a
 
@@ -41,11 +37,11 @@ Use
 
 	http://www.winpcap.org/install/default.htm
 
-3. Start the VPN client
+3. Start the client
 
 	client.exe [server] [port] [localip]
 
-4. On the VPN server system, configure an IP address:
+4. On the server system, configure an IP address:
 
 	ifconfig [interface] [target net IP] [mask]
 

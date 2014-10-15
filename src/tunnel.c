@@ -11,7 +11,7 @@ static pcap_t * sniffer;
 
 DWORD ThreadProc(LPVOID parm);
 
-void vpn_start(char * targetip, int port, char * localip) {
+void tunnel_start(char * targetip, int port, char * localip) {
 
 	/* first... connect to our VPN server */
 	server = client_connect(targetip, port);
@@ -55,7 +55,7 @@ int main(int argc, char * argv[]) {
 		return 0;
 	}
 
-	vpn_start(argv[1], atoi(argv[2]), argv[3]);
+	tunnel_start(argv[1], atoi(argv[2]), argv[3]);
 	return 0;
 }
 
